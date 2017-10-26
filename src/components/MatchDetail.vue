@@ -1,28 +1,30 @@
 <template lang="html">
   <div class="">
-    <league-header></league-header>
+    <match-additional-infor class="match-info"></match-additional-infor>
     <div class="match-detail-container">
-      <div class="team-container">
-        <span class="c-white">{{homeTeam.name}}</span>
-        <img :src="homeLogo" class="team-logo">
-      </div>
-      <div class="match-score">
-        <span class="score">{{homeTeam.goals}}    -    {{awayTeam.goals}}</span>
-      </div>
-      <div class="team-container">
-        <img :src="awayLogo" class="team-logo">
-        <span class="c-white">{{awayTeam.name}}</span>
+      <div class="match-score-container">
+        <div class="team-container">
+          <img :src="homeLogo" class="team-logo">
+          <span class="c-white text-padding-left">{{homeTeam.name}}</span>
+        </div>
+        <div class="match-score">
+          <span class="score">{{homeTeam.goals}}    -    {{awayTeam.goals}}</span>
+        </div>
+        <div class="team-container align-end">
+          <span class="c-white text-padding-right">{{awayTeam.name}}</span>
+          <img :src="awayLogo" class="team-logo">
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import LeagueHeader from '@/components/LeagueHeader'
+import MatchAdditionalInfor from '@/components/MatchAdditionalInfor'
 
 export default {
   components: {
-    LeagueHeader
+    MatchAdditionalInfor
   },
 
   props: {
@@ -63,33 +65,54 @@ export default {
   .match-detail-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     background-image: url('../assets/EPL.png');
   }
   .team-container {
-    height: 150px;
-    width: 38%;
+    width: 45%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
   }
   .match-score {
-    background-color: white;
-    height: 50px;
-    border-radius: 10px;
-    width: 24%;
+    background-color: #e90052;
+    height: 60px;
+    width: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+  }
+  .align-end {
+    justify-content: end;
   }
   .team-logo {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
+    background-color: white;
   }
   .c-white {
     color: white;
+    font-weight: bold;
+    font-size: 20px;
   }
   .score {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bold;
+  }
+  .match-info {
+    margin-top: 10px;
+  }
+  .match-score-container {
+    display: flex;
+    align-items: center;
+    background-color: #38003c;
+    width: 80%;
+    margin-top: 200px;
+  }
+  .text-padding-left {
+    padding-left: 25px;
+  }
+  .text-padding-right {
+    padding-right: 25px;
   }
 </style>

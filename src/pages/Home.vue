@@ -23,7 +23,7 @@
 
 <style lang="css">
   .match-detail {
-    width: 70%
+    width: 80%
   }
 
   .home-page {

@@ -9,7 +9,7 @@ export default {
     team: {
       required: true
     }
-  }
+  },
 
   computed: {
     teamName: () => {
@@ -22,6 +22,6 @@ export default {
 
 }
 </script>
-
+  
 <style lang="css">
 </style>
